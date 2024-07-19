@@ -13,7 +13,8 @@ def post2_view(request):
 
 
 def post3_view(request):
-    return render(request=request, template_name='post3_view.html')
+    posts = Post.objects.all()
+    return render(request=request, template_name='post3_view.html', context={'posts': posts})
 
 
 def main_page(request):
